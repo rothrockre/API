@@ -14,7 +14,7 @@ namespace API.Controllers
         //return all users
         public IEnumerable<UserPerm> Get()
         {
-            using (RAWorkoutEntities user = new RAWorkoutEntities())
+            using (WorkoutEntities user = new WorkoutEntities())
             {
                 return user.UserPerms.ToList();
             }
@@ -23,7 +23,7 @@ namespace API.Controllers
         //return specific user by username
         public UserPerm Get(string username)
         {
-            using(RAWorkoutEntities user = new RAWorkoutEntities())
+            using(WorkoutEntities user = new WorkoutEntities())
             {
                 return user.UserPerms.FirstOrDefault(o => o.Username.Equals(username));
             }
@@ -32,7 +32,7 @@ namespace API.Controllers
         public UserViewModel GetUserByEmail(string email)
         {
 
-            using (RAWorkoutEntities user = new RAWorkoutEntities())
+            using (WorkoutEntities user = new WorkoutEntities())
             {
                 //return user.UserPerms.FirstOrDefault(o => o.Email.Equals(email));
                 var result = (from c in user.UserPerms
@@ -61,7 +61,7 @@ namespace API.Controllers
 
         public int GetUserID(string email)
         {
-            using (RAWorkoutEntities db = new RAWorkoutEntities())
+            using (WorkoutEntities db = new WorkoutEntities())
             {
                 var data = db.UserPerms.Where(o => o.Email.ToLower().Equals(email.ToLower()));
                 if (data.Any())

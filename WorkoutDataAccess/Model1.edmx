@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RAWorkoutModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="WorkoutModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="UserGoals">
           <Key>
             <PropertyRef Name="GoalID" />
@@ -90,7 +90,7 @@
           <Property Name="MuscleStrainMultiplier" Type="float" />
           <Property Name="WorkoutID" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="RAWorkoutModelStoreContainer">
+        <EntityContainer Name="WorkoutModelStoreContainer">
           <EntitySet Name="UserGoals" EntityType="Self.UserGoals" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserMax" EntityType="Self.UserMax" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserMuscleFatigue" EntityType="Self.UserMuscleFatigue" Schema="dbo" store:Type="Tables" />
@@ -98,10 +98,11 @@
           <EntitySet Name="UserWorkouts" EntityType="Self.UserWorkouts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Workout" EntityType="Self.Workout" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="RAWorkoutModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="WorkoutModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="UserGoal">
           <Key>
             <PropertyRef Name="GoalID" />
@@ -187,7 +188,7 @@
           <Property Name="MuscleStrainMultiplier" Type="Double" />
           <Property Name="WorkoutID" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="RAWorkoutEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WorkoutEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserGoals" EntityType="Self.UserGoal" />
           <EntitySet Name="UserMaxes" EntityType="Self.UserMax" />
           <EntitySet Name="UserMuscleFatigues" EntityType="Self.UserMuscleFatigue" />
@@ -200,9 +201,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="RAWorkoutModelStoreContainer" CdmEntityContainer="RAWorkoutEntities">
+        <EntityContainerMapping StorageEntityContainer="WorkoutModelStoreContainer" CdmEntityContainer="WorkoutEntities">
           <EntitySetMapping Name="UserGoals">
-            <EntityTypeMapping TypeName="RAWorkoutModel.UserGoal">
+            <EntityTypeMapping TypeName="WorkoutModel.UserGoal">
               <MappingFragment StoreEntitySet="UserGoals">
                 <ScalarProperty Name="GoalID" ColumnName="GoalID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -211,7 +212,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserMaxes">
-            <EntityTypeMapping TypeName="RAWorkoutModel.UserMax">
+            <EntityTypeMapping TypeName="WorkoutModel.UserMax">
               <MappingFragment StoreEntitySet="UserMax">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
@@ -223,7 +224,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserMuscleFatigues">
-            <EntityTypeMapping TypeName="RAWorkoutModel.UserMuscleFatigue">
+            <EntityTypeMapping TypeName="WorkoutModel.UserMuscleFatigue">
               <MappingFragment StoreEntitySet="UserMuscleFatigue">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Chest" ColumnName="Chest" />
@@ -255,7 +256,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserPerms">
-            <EntityTypeMapping TypeName="RAWorkoutModel.UserPerm">
+            <EntityTypeMapping TypeName="WorkoutModel.UserPerm">
               <MappingFragment StoreEntitySet="UserPerms">
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
@@ -271,7 +272,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserWorkouts">
-            <EntityTypeMapping TypeName="RAWorkoutModel.UserWorkout">
+            <EntityTypeMapping TypeName="WorkoutModel.UserWorkout">
               <MappingFragment StoreEntitySet="UserWorkouts">
                 <ScalarProperty Name="WorkoutName" ColumnName="WorkoutName" />
                 <ScalarProperty Name="numSets" ColumnName="numSets" />
@@ -283,7 +284,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Workouts">
-            <EntityTypeMapping TypeName="RAWorkoutModel.Workout">
+            <EntityTypeMapping TypeName="WorkoutModel.Workout">
               <MappingFragment StoreEntitySet="Workout">
                 <ScalarProperty Name="WorkoutName" ColumnName="WorkoutName" />
                 <ScalarProperty Name="MuscleGroup" ColumnName="MuscleGroup" />
