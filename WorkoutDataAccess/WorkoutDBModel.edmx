@@ -188,7 +188,7 @@
           <Property Name="MuscleStrainMultiplier" Type="Double" />
           <Property Name="WorkoutID" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="WorkoutEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="WorkoutEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserGoals" EntityType="Self.UserGoal" />
           <EntitySet Name="UserMaxes" EntityType="Self.UserMax" />
           <EntitySet Name="UserMuscleFatigues" EntityType="Self.UserMuscleFatigue" />
@@ -201,7 +201,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="WorkoutModelStoreContainer" CdmEntityContainer="WorkoutEntities">
+        <EntityContainerMapping StorageEntityContainer="WorkoutModelStoreContainer" CdmEntityContainer="WorkoutEntities1">
           <EntitySetMapping Name="UserGoals">
             <EntityTypeMapping TypeName="WorkoutModel.UserGoal">
               <MappingFragment StoreEntitySet="UserGoals">

@@ -13,10 +13,10 @@ namespace WorkoutDataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WorkoutEntities : DbContext
+    public partial class WorkoutEntities1 : DbContext
     {
-        public WorkoutEntities()
-            : base("name=WorkoutEntities")
+        public WorkoutEntities1()
+            : base("name=WorkoutEntities1")
         {
         }
     

@@ -214,39 +214,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserGoal.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserMax.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserMuscleFatigue.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserPerm.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="UserWorkout.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Workout.cs">
-      <DependentUpon>WorkoutDataModel.tt</DependentUpon>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WorkoutDataModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -263,6 +248,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WorkoutDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="WorkoutDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WorkoutDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkoutDBModel.edmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="WorkoutDataModel.edmx">
@@ -272,29 +272,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <EntityDeploy Include="Model1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model1.edmx.diagram">
-      <DependentUpon>Model1.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="WorkoutDataModel.edmx.diagram">
       <DependentUpon>WorkoutDataModel.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="WorkoutDBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WorkoutDBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="WorkoutDBModel.edmx.diagram">
+      <DependentUpon>WorkoutDBModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
     <Content Include="WorkoutDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>WorkoutDataModel.Context.cs</LastGenOutput>
@@ -304,6 +294,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>WorkoutDataModel.edmx</DependentUpon>
       <LastGenOutput>WorkoutDataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="WorkoutDBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkoutDBModel.edmx</DependentUpon>
+      <LastGenOutput>WorkoutDBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="WorkoutDBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WorkoutDBModel.edmx</DependentUpon>
+      <LastGenOutput>WorkoutDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
